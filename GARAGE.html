@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GARAGE</title>
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="GARAGE.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">DMClark</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a onclick="Check_in_car()" href="FizzBuzz.html">FizzBuzz</a></li>
+                <li><a onclick="Check_out_car()" href="GARAGE.html">Garage</a></li>
+                <li><a>Page 3</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div>
+        <div id="CheckInCar" class="box">
+            <input type="text" name="reg" id="reg"><br/>
+            <input type="text" name="make" id="make"><br/>
+            <input type="text" name="name" id="name"><br/>
+            <input type="number" name="Broken_parts" id="Broken_parts">
+            <br/>
+            <a onclick="Check_in_car()">
+                <h1>Check_in</h1>
+            </a>
+
+        </div>
+        <div id="CheckOutCar" class="box">
+            <input type="text" name="reg" id="reg2">
+            <br/>
+            <a onclick="Check_out_car()">
+                <h1>Check_Out</h1>
+            </a>
+
+        </div>
+        <div class="box">
+            <div class="table-responsive">
+                <table id="listCars" class="table">
+<thead>
+    <td>reg</td><td>make</td><td>name</td><td>Broken_parts</td>
+</thead>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</body>
+
+
+</html>
