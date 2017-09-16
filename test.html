@@ -1,0 +1,27 @@
+<html>
+    
+    <body>
+    <div id="dogs"></div>
+    </body>
+    
+    </html>
+    <script>
+    let promiseRequest = (url) => {
+    return new Promise((resolve) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+    xhr.responseType = "json";
+    xhr.send();
+    xhr.onload = () => { resolve(xhr.response); }
+    });
+    }
+    
+    let getData = () => {
+    promiseRequest("https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json").then((data) => {
+    let divTag = document.getElementById("dogs");
+    divTag.textContent = data["squadName"];
+    });
+    }
+    window.onload = getData;
+    
+    </script>​

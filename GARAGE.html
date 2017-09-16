@@ -9,7 +9,7 @@
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="GARAGE.js"></script>
+
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -22,9 +22,10 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.html">Home</a></li>
-                <li><a onclick="Check_in_car()" href="FizzBuzz.html">FizzBuzz</a></li>
-                <li><a onclick="Check_out_car()" href="GARAGE.html">Garage</a></li>
-                <li><a>Page 3</a></li>
+                <li><a href="FizzBuzz.html">FizzBuzz</a></li>
+                <li><a href="GARAGE.html">Garage</a></li>
+                <li><a href="JSON_1.html">JSON 1</a></li>
+                <li><a href="JSON_2.html">JSON 2</a></li>
             </ul>
         </div>
     </nav>
@@ -51,20 +52,27 @@
         </div>
         <div class="box">
             <div class="table-responsive">
-                <table id="listCars" class="table">
-<thead>
-    <td>reg</td><td>make</td><td>name</td><td>Broken_parts</td>
-</thead>
+                <table class="table">
+                    <thead>
+                        <td>reg</td>
+                        <td>make</td>
+                        <td>name</td>
+                        <td>Broken_parts</td>
+                        <td>Bill</td>
+                        <td>fix</td>
+
+
+                    </thead>
+                    <tbody id="listCars">
+
+                    </tbody>
+
                 </table>
             </div>
         </div>
-
-
     </div>
-
-
-
 </body>
 
+<script src="GARAGE.js"></script>
 
 </html>

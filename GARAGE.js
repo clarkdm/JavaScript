@@ -1,37 +1,49 @@
 
-var cars = []
+let cars = new Map();
 
-function Car(reg_, make_, name_, Broken_parts_) {
-    this.reg = reg_;
-    this.make = make_;
-    this.name = name_;
-    this.Broken_parts = Broken_parts_;
-}
 
-// var myFather = new Person("John", "Doe", 50, "blue");
+
+// let myFather = new Person("John", "Doe", 50, "blue");
 
 
 function Check_in_car() {
-    var listCars_table = document.getElementById("listCars");
-    
-    var reg = document.getElementById("reg");
-    var make = document.getElementById("make");
-    var name = document.getElementById("name");
-    var Broken_parts = document.getElementById("Broken_parts");
+    let listCars_table = document.getElementById("listCars");
+    let reg = document.getElementById("reg");
+    let make = document.getElementById("make");
+    let name = document.getElementById("name");
+    let Broken_parts = document.getElementById("Broken_parts");
 
-    cars[reg.value] = Car(reg.value, make.value, name.value, Broken_parts.value)
-
-listCars_table.innerHTML += "<tr id =\""+reg.value+"\"><td>" + reg.value + "</td><td>" + make.value + "</td><td>" + name.value + "</td><td>" + Broken_parts.value + "</td></tr>"
+    cars.set(reg.value, { reg: reg.value, make: make.value, name: name.value, Broken_parts: Broken_parts.value, bill: 25 })
+    listCars()
 }
 
 function Check_out_car() {
-    var listCars_table = document.getElementById("listCars");
-    
-    var reg = document.getElementById("reg2");
-
-
-    cars[reg.value]
-
+    let listCars_table = document.getElementById("listCars");
+    let reg = document.getElementById("reg2").value;
+    cars.delete(reg);
+    listCars()
 }
-    
+
+function listCars() {
+    let listCars_table = document.getElementById("listCars");
+    listCars_table.innerHTML = ""
+
+    cars.forEach(function (value, key) {
+        (car_tr(listCars_table, value))
+    });
+}
+
+function car_tr(listCars_table, car) {
+    listCars_table.innerHTML += `<tr id =\"${car.reg}\"><td> ${car.reg} </td><td> ${car.make} </td><td> ${car.name} </td><td> ${car.Broken_parts}</td><td>${car.bill} </td><td><a onclick='fix("${car.reg}")'>FIX</a></td></tr>`
+}
+
+function fix(reg) {
+    console.log(reg + cars.get(reg).bill);
+    let car = cars.get(reg);
+
+    car.bill += (car.Broken_parts * 33)
+    car.Broken_parts = 0
+    cars.set(reg,car)
+    listCars()
+}
 

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>fizzbuzz</title>
+    <title>JSON 2</title>
     <link rel="stylesheet" type="text/css" href="css.css">
 
     <!-- Latest compiled and minified CSS -->
@@ -28,20 +28,38 @@
                 <li><a href="FizzBuzz.html">FizzBuzz</a></li>
                 <li><a href="GARAGE.html">Garage</a></li>
                 <li><a href="JSON_1.html">JSON 1</a></li>
-                <li><a href="JSON_2.html">JSON 2</a></li>
+                <li><a onclick="JSON_2.html">JSON 2</a></li>
             </ul>
         </div>
     </nav>
-    <div>
-        <input type="number" name="max" id="max">
-        <input type="text" name="3" id="divis3">
-        <input type="text" name="5" id="divis5">
-        <a onclick="buzz()">
-            <h1>start FizzBuzz</h1>
-        </a>
-        <div id="fizzbuzz"> </div>
+    <div id="json_"></div>
+
+    <div class="box">
+        <input type="text" name="search" id="search">
+        <a onclick="search_()">
+                <h1>search</h1>
+            </a>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <td>Name</td>
+                    <td>cty</td>
+                    <td>hse</td>
+                    <td>yrs</td>
+
+
+                </thead>
+                <tbody id="listMembers">
+
+                </tbody>
+
+            </table>
+        </div>
     </div>
+
+
+
 </body>
-<script src="FizzBuzz.js"></script>
+<script src="json_2.js"></script>
 
 </html>

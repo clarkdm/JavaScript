@@ -3,9 +3,9 @@
 
 
 function fizz(max, divis3, divis5) {
-    var str = ""
-    for (var index = 1; index <= max; index++) {
-        var temp = ""
+    let str = ""
+    for (let index = 1; index <= max; index++) {
+        let temp = ""
         if (index % 3 === 0) {
             temp = divis3
         }
@@ -23,10 +23,10 @@ function fizz(max, divis3, divis5) {
 
 function buzz() {
 
-    var divFizz = document.getElementById("fizzbuzz");
-    var max = document.getElementById("max");
-    var divis3 = document.getElementById("divis3");
-    var divis5 = document.getElementById("divis5");
+    let divFizz = document.getElementById("fizzbuzz");
+    let max = document.getElementById("max");
+    let divis3 = document.getElementById("divis3");
+    let divis5 = document.getElementById("divis5");
 
     divFizz.innerHTML = fizz(max.value, divis3.value, divis5.value)
 }
